@@ -21,28 +21,28 @@ function get_user_can_publish( $args ) {
 	// Ensure there is a post ID provided in the data.
 	$id = ! empty( $args['id'] ) ? (int) $args['id'] : 0;
 	if ( empty( $id ) ) {
-		return [
+		return array(
 			'userCanPublish' => false,
-		];
+		);
 	}
 
 	// Try to get the post by ID.
 	$post = get_post( $id );
 	if ( empty( $post ) ) {
-		return [
+		return array(
 			'userCanPublish' => false,
-		];
+		);
 	}
 
 	// Ensure the user is authorized to make changes to Apple News posts.
-	return [
+	return array(
 		'userCanPublish' => current_user_can(
 			apply_filters(
 				'apple_news_publish_capability',
 				Apple_News::get_capability_for_post_type( 'publish_posts', $post->post_type )
 			)
 		),
-	];
+	);
 }
 
 /**
@@ -55,10 +55,10 @@ add_action(
 		register_rest_route(
 			'apple-news/v1',
 			'/user-can-publish/(?P<id>\d+)',
-			[
+			array(
 				'methods'  => 'GET',
 				'callback' => __NAMESPACE__ . '\get_user_can_publish',
-			]
+			)
 		);
 	}
 );

@@ -14,14 +14,14 @@ namespace Apple_News\REST;
  */
 function get_sections_response() {
 	$sections = \Admin_Apple_Sections::get_sections();
-	$response = [];
+	$response = array();
 
 	if ( ! empty( $sections ) && ! empty( get_current_user_id() ) ) {
 		foreach ( $sections as $section ) {
-			$response[] = [
+			$response[] = array(
 				'id'   => esc_html( 'https://news-api.apple.com/sections/' . $section->id ),
 				'name' => esc_html( $section->name ),
-			];
+			);
 		}
 	}
 
@@ -38,10 +38,10 @@ add_action(
 		register_rest_route(
 			'apple-news/v1',
 			'/sections',
-			[
+			array(
 				'methods'  => 'GET',
 				'callback' => __NAMESPACE__ . '\get_sections_response',
-			]
+			)
 		);
 	}
 );

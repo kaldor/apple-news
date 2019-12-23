@@ -66,22 +66,22 @@ class Embed_Generic extends Component {
 		$this->register_spec(
 			'embed-generic-json',
 			__( 'Embed (generic) JSON', 'apple-news' ),
-			[
+			array(
 				'layout'     => 'embed-generic-layout',
 				'role'       => 'container',
 				'components' => '#components#',
-			]
+			)
 		);
 
 		$this->register_spec(
 			'embed-generic-layout',
 			__( 'Embed (generic) Layout', 'apple-news' ),
-			[
-				'margin' => [
+			array(
+				'margin' => array(
 					'top'    => 15,
 					'bottom' => 15,
-				],
-			]
+				),
+			)
 		);
 	}
 
@@ -93,7 +93,7 @@ class Embed_Generic extends Component {
 	 * @access protected
 	 */
 	protected function build( $html ) {
-		$components = [];
+		$components = array();
 		$provider   = '';
 		$title      = '';
 		$url        = '';
@@ -110,7 +110,7 @@ class Embed_Generic extends Component {
 			 * different provider. Therefore, we will only consider an embed to be from "generic" providers
 			 * like Amazon or Imgur if no other, more specific, providers were matched first.
 			 */
-			$provider_map = [
+			$provider_map = array(
 				'animoto.com'      => 'animoto',
 				'cloudup.com'      => 'cloudup',
 				'collegehumor.com' => 'collegehumor',
@@ -139,7 +139,7 @@ class Embed_Generic extends Component {
 				'reddit.com'       => 'reddit',
 				'imgur.com'        => 'imgur',
 				'amazon.com'       => 'amazon-kindle',
-			];
+			);
 
 			// Loop through the provider map, trying to guess the provider based on included domain name.
 			foreach ( $provider_map as $domain => $provider_slug ) {
@@ -234,29 +234,29 @@ class Embed_Generic extends Component {
 
 		// Add the title, if it is present.
 		if ( ! empty( $title ) ) {
-			$components[] = [
+			$components[] = array(
 				'role'   => 'heading2',
 				'text'   => $title,
 				'format' => 'html',
-			];
+			);
 		}
 
 		// Add the base component.
-		$components[] = [
+		$components[] = array(
 			'role'      => 'body',
 			// translators: name of provider.
 			'text'      => '<a href="' . esc_url( $url ) . '">' . esc_html( sprintf( __( 'View on %s.', 'apple-news' ), $provider ) ) . '</a>',
 			'format'    => 'html',
-			'textStyle' => [
+			'textStyle' => array(
 				'fontSize' => 14,
-			],
-		];
+			),
+		);
 
 		$this->register_json(
 			'embed-generic-json',
-			[
+			array(
 				'#components#' => $components,
-			]
+			)
 		);
 		$this->register_layout( 'embed-generic-layout', 'embed-generic-layout' );
 	}

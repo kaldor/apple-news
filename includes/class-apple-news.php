@@ -201,19 +201,19 @@ class Apple_News {
 	public function __construct() {
 		add_action(
 			'admin_enqueue_scripts',
-			[ $this, 'action_admin_enqueue_scripts' ]
+			array( $this, 'action_admin_enqueue_scripts' )
 		);
 		add_action(
 			'enqueue_block_editor_assets',
-			[ $this, 'action_enqueue_block_editor_assets' ]
+			array( $this, 'action_enqueue_block_editor_assets' )
 		);
 		add_action(
 			'plugins_loaded',
-			[ $this, 'action_plugins_loaded' ]
+			array( $this, 'action_plugins_loaded' )
 		);
 		add_filter(
 			'update_post_metadata',
-			[ $this, 'filter_update_post_metadata' ],
+			array( $this, 'filter_update_post_metadata' ),
 			10,
 			5
 		);
@@ -287,7 +287,7 @@ class Apple_News {
 		wp_enqueue_script(
 			'publish-to-apple-news-plugin-sidebar',
 			plugins_url( 'build/pluginSidebar.js', __DIR__ ),
-			[ 'wp-i18n', 'wp-edit-post' ],
+			array( 'wp-i18n', 'wp-edit-post' ),
 			self::$version,
 			true
 		);
@@ -403,12 +403,12 @@ class Apple_News {
 	 */
 	public function inline_locale_data( $to_handle ) {
 		// Define locale data for Jed.
-		$locale_data = [
-			'' => [
+		$locale_data = array(
+			'' => array(
 				'domain' => 'publish-to-apple-news',
 				'lang'   => get_user_locale(),
-			],
-		];
+			),
+		);
 
 		// Pass the Jed configuration to the admin to properly register i18n.
 		wp_add_inline_script(

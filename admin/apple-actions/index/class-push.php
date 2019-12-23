@@ -103,7 +103,7 @@ class Push extends API_Action {
 	 *
 	 * @return string The checksum for the JSON.
 	 */
-	private function generate_checksum( $json, $meta = [], $bundles = [], $force = false ) {
+	private function generate_checksum( $json, $meta = array(), $bundles = array(), $force = false ) {
 		// Use cached checksum, if it exists, and if force is false.
 		if ( ! $force && ! empty( $this->checksum ) ) {
 			return $this->checksum;
@@ -141,7 +141,7 @@ class Push extends API_Action {
 	 * @return boolean
 	 * @throws \Apple_Actions\Action_Exception If the post could not be found.
 	 */
-	private function is_post_in_sync( $json, $meta = [], $bundles = [] ) {
+	private function is_post_in_sync( $json, $meta = array(), $bundles = array() ) {
 		$in_sync = true;
 
 		// Ensure the post (still) exists. Async operations might result in this function being run against a non-existent post.

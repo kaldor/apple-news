@@ -15,13 +15,13 @@ namespace Apple_News\REST;
  */
 function get_settings_response( $data ) {
 	if ( empty( get_current_user_id() ) ) {
-		return [];
+		return array();
 	}
 
 	// Compile non-sensitive plugin settings into a JS-friendly format and return.
 	$admin_settings = new \Admin_Apple_Settings();
 	$settings       = $admin_settings->fetch_settings();
-	return [
+	return array(
 		'adminUrl'            => esc_url_raw( admin_url( 'admin.php?page=apple-news-options' ) ),
 		'automaticAssignment' => ! empty( get_option( 'apple_news_section_taxonomy_mappings' ) ),
 		'apiAsync'            => 'yes' === $settings->api_async,
@@ -31,10 +31,10 @@ function get_settings_response( $data ) {
 		'enableCoverArt'      => 'yes' === $settings->enable_cover_art,
 		'fullBleedImages'     => 'yes' === $settings->full_bleed_images,
 		'htmlSupport'         => 'yes' === $settings->html_support,
-		'postTypes'           => ! empty( $settings->post_types ) && is_array( $settings->post_types ) ? array_map( 'sanitize_text_field', $settings->post_types ) : [],
+		'postTypes'           => ! empty( $settings->post_types ) && is_array( $settings->post_types ) ? array_map( 'sanitize_text_field', $settings->post_types ) : array(),
 		'showMetabox'         => 'yes' === $settings->show_metabox,
 		'useRemoteImages'     => 'yes' === $settings->use_remote_images,
-	];
+	);
 }
 
 /**
@@ -47,10 +47,10 @@ add_action(
 		register_rest_route(
 			'apple-news/v1',
 			'/get-settings',
-			[
+			array(
 				'methods'  => 'GET',
 				'callback' => __NAMESPACE__ . '\get_settings_response',
-			]
+			)
 		);
 	}
 );

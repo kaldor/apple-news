@@ -32,9 +32,9 @@ function modify_post( $post_id, $operation ) {
 		return new WP_Error(
 			'apple_news_no_post_id',
 			$message,
-			[
+			array(
 				'status' => 400,
-			]
+			)
 		);
 	}
 
@@ -46,9 +46,9 @@ function modify_post( $post_id, $operation ) {
 		return new WP_Error(
 			'apple_news_bad_post_id',
 			$message,
-			[
+			array(
 				'status' => 404,
-			]
+			)
 		);
 	}
 
@@ -64,9 +64,9 @@ function modify_post( $post_id, $operation ) {
 		return new WP_Error(
 			'apple_news_failed_cap_check',
 			$message,
-			[
+			array(
 				'status' => 401,
-			]
+			)
 		);
 	}
 
@@ -103,9 +103,9 @@ function modify_post( $post_id, $operation ) {
 			);
 		}
 
-		return [
+		return array(
 			'publishState' => Admin_Apple_News::get_post_status( $post_id ),
-		];
+		);
 	} catch ( Action_Exception $e ) {
 		// Add the error message to the list of messages to display to the user using normal means.
 		Admin_Apple_Notice::error( $e->getMessage() );

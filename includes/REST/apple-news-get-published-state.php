@@ -14,7 +14,7 @@ namespace Apple_News\REST;
  * @return array updated response.
  */
 function get_published_state_response( $data ) {
-	$response = [];
+	$response = array();
 
 	if ( ! empty( get_current_user_id() ) ) {
 		$response['publishState'] = \Admin_Apple_News::get_post_status( $data['id'] );
@@ -33,10 +33,10 @@ add_action(
 		register_rest_route(
 			'apple-news/v1',
 			'/get-published-state/(?P<id>\d+)',
-			[
+			array(
 				'methods'  => 'GET',
 				'callback' => __NAMESPACE__ . '\get_published_state_response',
-			]
+			)
 		);
 	}
 );

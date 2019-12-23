@@ -32,10 +32,10 @@ function apple_news_json_encode( $value ) {
  * @param array  $args         Optional. Additional arguments for register_post_meta or register_term_meta. Defaults to an empty array.
  * @return bool True if the meta key was successfully registered in the global array, false if not.
  */
-function apple_news_register_meta_helper( $object_type, $object_slugs, $meta_key, $args = [] ) {
+function apple_news_register_meta_helper( $object_type, $object_slugs, $meta_key, $args = array() ) {
 
 	// Object type must be either post or term.
-	if ( ! in_array( $object_type, [ 'post', 'term' ], true ) ) {
+	if ( ! in_array( $object_type, array( 'post', 'term' ), true ) ) {
 		throw new InvalidArgumentException(
 			__(
 				'Object type must be one of "post", "term".',
@@ -47,12 +47,12 @@ function apple_news_register_meta_helper( $object_type, $object_slugs, $meta_key
 	// Merge provided arguments with defaults.
 	$args = wp_parse_args(
 		$args,
-		[
+		array(
 			'sanitize_callback' => 'apple_news_sanitize_meta_by_type',
 			'show_in_rest'      => true,
 			'single'            => true,
 			'type'              => 'string',
-		]
+		)
 	);
 
 	// Fork for object type.
@@ -94,7 +94,7 @@ function apple_news_sanitize_coverart_data( $meta_value ) {
 
 	// Construct the meta value from the array of image sizes.
 	$raw_value       = json_decode( $meta_value, true );
-	$sanitized_value = [];
+	$sanitized_value = array();
 	foreach ( $image_sizes as $image_size ) {
 		if ( ! empty( $raw_value[ $image_size ] ) && is_int( $raw_value[ $image_size ] ) ) {
 			$sanitized_value[ $image_size ] = $raw_value[ $image_size ];
@@ -103,7 +103,7 @@ function apple_news_sanitize_coverart_data( $meta_value ) {
 
 	// Add the orientation, if it is set.
 	if ( ! empty( $raw_value['orientation'] )
-		&& in_array( $raw_value['orientation'], [ 'landscape', 'portrait', 'square' ], true )
+		&& in_array( $raw_value['orientation'], array( 'landscape', 'portrait', 'square' ), true )
 	) {
 		$sanitized_value['orientation'] = $raw_value['orientation'];
 	}
@@ -163,7 +163,7 @@ function apple_news_sanitize_selected_sections( $meta_value ) {
 	// The meta value should be a stringified JSON array. Ensure that it is.
 	$raw_meta_value = json_decode( $meta_value, true );
 	if ( ! is_array( $raw_meta_value ) ) {
-		return [];
+		return array();
 	}
 
 	// Rebuild the data, sanitizing values, and validating keys.

@@ -97,40 +97,40 @@ class Admin_Apple_News extends Apple_News {
 			$post_types = self::$settings->post_types;
 
 			// Define custom postmeta fields to register.
-			$postmeta = [
-				'apple_news_api_created_at'     => [],
-				'apple_news_api_id'             => [],
-				'apple_news_api_modified_at'    => [],
-				'apple_news_api_revision'       => [],
-				'apple_news_api_share_url'      => [],
-				'apple_news_coverart'           => [
+			$postmeta = array(
+				'apple_news_api_created_at'     => array(),
+				'apple_news_api_id'             => array(),
+				'apple_news_api_modified_at'    => array(),
+				'apple_news_api_revision'       => array(),
+				'apple_news_api_share_url'      => array(),
+				'apple_news_coverart'           => array(
 					'sanitize_callback' => 'apple_news_sanitize_coverart_data',
-					'show_in_rest'      => [
+					'show_in_rest'      => array(
 						'prepare_callback' => 'apple_news_json_encode',
-					],
-				],
-				'apple_news_is_hidden'          => [
+					),
+				),
+				'apple_news_is_hidden'          => array(
 					'type' => 'boolean',
-				],
-				'apple_news_is_paid'            => [
+				),
+				'apple_news_is_paid'            => array(
 					'type' => 'boolean',
-				],
-				'apple_news_is_preview'         => [
+				),
+				'apple_news_is_preview'         => array(
 					'type' => 'boolean',
-				],
-				'apple_news_is_sponsored'       => [
+				),
+				'apple_news_is_sponsored'       => array(
 					'type' => 'boolean',
-				],
-				'apple_news_maturity_rating'    => [],
-				'apple_news_pullquote'          => [],
-				'apple_news_pullquote_position' => [],
-				'apple_news_sections'           => [
+				),
+				'apple_news_maturity_rating'    => array(),
+				'apple_news_pullquote'          => array(),
+				'apple_news_pullquote_position' => array(),
+				'apple_news_sections'           => array(
 					'sanitize_callback' => 'apple_news_sanitize_selected_sections',
-					'show_in_rest'      => [
+					'show_in_rest'      => array(
 						'prepare_callback' => 'apple_news_json_encode',
-					],
-				],
-			];
+					),
+				),
+			);
 
 			// Loop over postmeta fields and register each.
 			foreach ( $postmeta as $meta_key => $options ) {

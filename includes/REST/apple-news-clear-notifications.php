@@ -16,16 +16,16 @@ add_action(
 		register_rest_route(
 			'apple-news/v1',
 			'/clear-notifications',
-			[
+			array(
 				'methods'  => 'POST',
 				'callback' => function( $data ) {
 					$body          = json_decode( $data->get_body(), true );
 					$notifications = ! empty( $body['toClear'] ) && is_array( $body['toClear'] )
 						? $body['toClear']
-						: [];
+						: array();
 					return \Admin_Apple_Notice::clear( $notifications );
 				},
-			]
+			)
 		);
 	}
 );

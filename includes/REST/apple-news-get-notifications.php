@@ -16,10 +16,10 @@ add_action(
 		register_rest_route(
 			'apple-news/v1',
 			'/get-notifications',
-			[
+			array(
 				'methods'  => 'GET',
-				'callback' => [ 'Admin_Apple_Notice', 'get' ],
-			]
+				'callback' => array( 'Admin_Apple_Notice', 'get' ),
+			)
 		);
 	}
 );

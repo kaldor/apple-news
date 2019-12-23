@@ -111,7 +111,7 @@ class Admin_Apple_Notice {
 	 */
 	public static function get() {
 		$notices = self::get_user_meta( get_current_user_id() );
-		return ( ! empty( $notices ) && is_array( $notices ) ) ? $notices : [];
+		return ( ! empty( $notices ) && is_array( $notices ) ) ? $notices : array();
 	}
 
 	/**

@@ -31,10 +31,10 @@ add_action(
 		register_rest_route(
 			'apple-news/v1',
 			'/publish',
-			[
+			array(
 				'methods'  => 'POST',
 				'callback' => __NAMESPACE__ . '\rest_post_publish',
-			]
+			)
 		);
 	}
 );
