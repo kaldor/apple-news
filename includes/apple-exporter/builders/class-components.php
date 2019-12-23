@@ -646,6 +646,18 @@ class Components extends Builder {
 			),
 			'components' => array_slice( $new_components, $cover_index + 1 ),
 		);
+		if ( ! empty( $theme->get_value( 'darkmode_body_background_color' ) ) ) {
+			$regrouped_components['style']['conditional'] = array(
+				array(
+					'backgroundColor' => $theme->get_value( 'darkmode_body_background_color' ),
+					'conditions' => array(
+						array(
+							'preferredColorScheme' => 'dark',
+						),
+					),
+				),
+			);
+		}
 
 		return array_merge(
 			array_slice( $new_components, 0, $cover_index + 1 ),
