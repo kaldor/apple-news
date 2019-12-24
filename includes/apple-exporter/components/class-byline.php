@@ -40,6 +40,14 @@ class Byline extends Component {
 				'lineHeight'    => '#byline_line_height#',
 				'tracking'      => '#byline_tracking#',
 				'textColor'     => '#byline_color#',
+				'conditional'   => array(
+					'textColor' => '#darkmode_byline_color#',
+					'conditions' => array(
+						array(
+							'preferredColorScheme' => 'dark',
+						),
+					),
+				),
 			)
 		);
 

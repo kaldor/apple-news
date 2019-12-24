@@ -128,6 +128,15 @@ class Body extends Component {
 						'textColor'           => '#dropcap_color#',
 						'numberOfRaisedLines' => '#dropcap_number_of_raised_lines#',
 						'backgroundColor'     => '#dropcap_background_color#',
+						array(
+							'textColor' => '#darkmode_dropcap_color#',
+							'backgroundColor'     => '#darkmode_dropcap_background_color#',
+							'conditions' => array(
+								array(
+									'preferredColorScheme' => 'dark',
+								),
+							),
+						),
 					),
 				)
 			)
@@ -312,6 +321,17 @@ class Body extends Component {
 			),
 			'paragraphSpacingBefore' => 18,
 			'paragraphSpacingAfter'  => 18,
+			array(
+				'textColor' => '#darkmode_body_color#',
+				'linkStyle'              => array(
+					'textColor' => '#darkmode_body_link_color#',
+				),
+				'conditions' => array(
+					array(
+						'preferredColorScheme' => 'dark',
+					),
+				),
+			),
 		);
 	}
 

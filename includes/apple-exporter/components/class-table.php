@@ -78,6 +78,14 @@ class Table extends Component {
 						'color' => '#table_border_color#',
 						'style' => '#table_border_style#',
 						'width' => '#table_border_width#',
+						'conditional'   => array(
+							'color' => '#darkmode_table_border_color#',
+							'conditions' => array(
+								array(
+									'preferredColorScheme' => 'dark',
+								),
+							),
+						),
 					),
 				),
 				'tableStyle' => array(
@@ -91,8 +99,24 @@ class Table extends Component {
 							'lineHeight' => '#table_body_line_height#',
 							'textColor'  => '#table_body_color#',
 							'tracking'   => '#table_body_tracking#',
+							'conditional'   => array(
+								'textColor' => '#darkmode_table_body_color#',
+								'conditions' => array(
+									array(
+										'preferredColorScheme' => 'dark',
+									),
+								),
+							),
 						),
 						'verticalAlignment'   => '#table_body_vertical_alignment#',
+						'conditional'   => array(
+							'backgroundColor' => '#darkmode_table_body_background_color#',
+							'conditions' => array(
+								array(
+									'preferredColorScheme' => 'dark',
+								),
+							),
+						),
 					),
 					'columns'     => array(
 						'divider' => array(

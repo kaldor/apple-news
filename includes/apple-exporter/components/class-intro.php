@@ -39,6 +39,15 @@ class Intro extends Component {
 				'fontSize'   => '#body_size#',
 				'lineHeight' => '#body_line_height#',
 				'textColor'  => '#body_color#',
+				'conditional' => array(
+					'textColor' => '#darkmode_body_color#',
+					'conditions' => array(
+						array(
+							'preferredColorScheme' => 'dark',
+						),
+					),
+				),
+
 			)
 		);
 	}

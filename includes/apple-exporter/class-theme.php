@@ -1410,7 +1410,6 @@ class Theme {
 	 * @return mixed The value for the option name provided.
 	 */
 	public function get_value( $option ) {
-
 		// Attempt to return the value from the values array.
 		if ( isset( $this->values[ $option ] ) ) {
 			return $this->values[ $option ];
@@ -1459,7 +1458,6 @@ class Theme {
 	 * @return bool True on success, false on failure.
 	 */
 	public function load( $values = array() ) {
-
 		// If no values were provided, attempt to load from the database.
 		if ( empty( $values ) ) {
 			$values = get_option( self::theme_key( $this->get_name() ) );

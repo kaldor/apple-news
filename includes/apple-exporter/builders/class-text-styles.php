@@ -102,6 +102,16 @@ class Text_Styles extends Builder {
 				'tracking'   => intval( $theme->get_value( 'monospaced_tracking' ) ) / 100,
 				'lineHeight' => intval( $theme->get_value( 'monospaced_line_height' ) ),
 				'textColor'  => $theme->get_value( 'monospaced_color' ),
+				'conditional' => ! empty( $theme->get_value( 'darkmode_monospaced_color' ) ) ? array(
+					array(
+						'textColor' => $theme->get_value( 'darkmode_monospaced_color' ),
+						'conditions' => array(
+							array(
+								'preferredColorScheme' => 'dark',
+							),
+						),
+					),
+				) : null,
 			)
 		);
 
@@ -117,6 +127,16 @@ class Text_Styles extends Builder {
 				'textColor'              => $theme->get_value( 'monospaced_color' ),
 				'paragraphSpacingBefore' => 18,
 				'paragraphSpacingAfter'  => 18,
+				'conditional' => ! empty( $theme->get_value( 'darkmode_monospaced_color' ) ) ? array(
+					array(
+						'textColor' => $theme->get_value( 'darkmode_monospaced_color' ),
+						'conditions' => array(
+							array(
+								'preferredColorScheme' => 'dark',
+							),
+						),
+					),
+				) : null,
 			)
 		);
 
@@ -129,6 +149,16 @@ class Text_Styles extends Builder {
 				'tracking'   => intval( $theme->get_value( 'monospaced_tracking' ) ) / 100,
 				'lineHeight' => intval( $theme->get_value( 'monospaced_line_height' ) ),
 				'textColor'  => $theme->get_value( 'monospaced_color' ),
+				'conditional' => ! empty( $theme->get_value( 'darkmode_monospaced_color' ) ) ? array(
+					array(
+						'textColor' => $theme->get_value( 'darkmode_monospaced_color' ),
+						'conditions' => array(
+							array(
+								'preferredColorScheme' => 'dark',
+							),
+						),
+					),
+				) : null,
 			)
 		);
 	}

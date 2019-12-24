@@ -124,6 +124,15 @@ class Quote extends Component {
 				'lineHeight'    => '#blockquote_line_height#',
 				'textAlignment' => '#text_alignment#',
 				'tracking'      => '#blockquote_tracking#',
+				'conditoinal'   => array(
+					'textColor' => '#darkmode_blockquote_color#',
+					'conditions' => array(
+						array(
+							'preferredColorScheme' => 'dark',
+						),
+					),
+				),
+
 			)
 		);
 
@@ -217,6 +226,15 @@ class Quote extends Component {
 				'lineHeight'         => '#pullquote_line_height#',
 				'textAlignment'      => '#text_alignment#',
 				'tracking'           => '#pullquote_tracking#',
+				'conditional'        => array(
+					'textColor' => '#darkmode_pullquote_color#',
+					'conditions' => array(
+						array(
+							'preferredColorScheme' => 'dark',
+						),
+					),
+				),
+
 			)
 		);
 	}

@@ -93,6 +93,15 @@ class Heading extends Component {
 					'textColor'     => '#header' . $level . '_color#',
 					'textAlignment' => '#text_alignment#',
 					'tracking'      => '#header' . $level . '_tracking#',
+					'conditional'   => array(
+						'textColor' => '#darkmode_header' . $level . '_color#',
+						'conditions' => array(
+							array(
+								'preferredColorScheme' => 'dark',
+							),
+						),
+					),
+
 				)
 			);
 		}

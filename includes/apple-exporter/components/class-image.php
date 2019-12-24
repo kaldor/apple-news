@@ -86,6 +86,14 @@ class Image extends Component {
 							'tracking'      => '#caption_tracking#',
 							'lineHeight'    => '#caption_line_height#',
 							'textColor'     => '#caption_color#',
+							'conditional'   => array(
+								'textColor' => '#darkmode_caption_color#',
+								'conditions' => array(
+									array(
+										'preferredColorScheme' => 'dark',
+									),
+								),
+							),
 						),
 						'layout'    => array(
 							'margin'               => array(
