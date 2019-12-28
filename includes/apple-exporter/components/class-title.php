@@ -43,7 +43,7 @@ class Title extends Component {
 				'textColor'     => '#header1_color#',
 				'textAlignment' => '#text_alignment#',
 				'conditional'   => array(
-					'textColor'     => '#darkmode_header1_color#',
+					'textColor'  => '#darkmode_header1_color#',
 					'conditions' => array(
 						array(
 							'preferredColorScheme' => 'dark',
@@ -104,13 +104,13 @@ class Title extends Component {
 			'default-title',
 			'default-title',
 			array(
-				'#header1_font#'        => $theme->get_value( 'header1_font' ),
-				'#header1_size#'        => intval( $theme->get_value( 'header1_size' ) ),
-				'#header1_line_height#' => intval( $theme->get_value( 'header1_line_height' ) ),
-				'#header1_tracking#'    => intval( $theme->get_value( 'header1_tracking' ) ) / 100,
-				'#header1_color#'       => $theme->get_value( 'header1_color' ),
-				'#darkmode_header1_color#'       => $theme->get_value( 'darkmode_header1_color' ),
-				'#text_alignment#'      => $this->find_text_alignment(),
+				'#header1_font#'           => $theme->get_value( 'header1_font' ),
+				'#header1_size#'           => intval( $theme->get_value( 'header1_size' ) ),
+				'#header1_line_height#'    => intval( $theme->get_value( 'header1_line_height' ) ),
+				'#header1_tracking#'       => intval( $theme->get_value( 'header1_tracking' ) ) / 100,
+				'#header1_color#'          => $theme->get_value( 'header1_color' ),
+				'#darkmode_header1_color#' => $theme->get_value( 'darkmode_header1_color' ),
+				'#text_alignment#'         => $this->find_text_alignment(),
 			),
 			'textStyle'
 		);

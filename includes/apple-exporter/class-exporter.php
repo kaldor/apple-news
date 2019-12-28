@@ -68,8 +68,8 @@ class Exporter {
 	 */
 	public function __construct( $content, $workspace = null, $settings = null ) {
 		$this->content   = $content;
-		$this->workspace = $workspace ?: new Workspace( $this->content_id() );
-		$this->settings  = $settings ?: new Settings();
+		$this->workspace = $workspace ? $workspace : new Workspace( $this->content_id() );
+		$this->settings  = $settings ? $settings : new Settings();
 		$this->builders  = array();
 	}
 
@@ -295,7 +295,7 @@ class Exporter {
 			$output['conditional'] = array(
 				array(
 					'backgroundColor' => $theme->get_value( 'darkmode_body_background_color' ),
-					'conditions' => array(
+					'conditions'      => array(
 						array(
 							'preferredColorScheme' => 'dark',
 						),
@@ -333,7 +333,7 @@ class Exporter {
 	 * @return string The title of the content being exported.
 	 */
 	private function content_title() {
-		return $this->content->title() ?: 'Untitled Article';
+		return $this->content->title() ? $this->content->title() : 'Untitled Article';
 	}
 
 	/**

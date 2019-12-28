@@ -35,12 +35,12 @@ class Intro extends Component {
 			'default-intro',
 			__( 'Style', 'apple-news' ),
 			array(
-				'fontName'   => '#body_font#',
-				'fontSize'   => '#body_size#',
-				'lineHeight' => '#body_line_height#',
-				'textColor'  => '#body_color#',
+				'fontName'    => '#body_font#',
+				'fontSize'    => '#body_size#',
+				'lineHeight'  => '#body_line_height#',
+				'textColor'   => '#body_color#',
 				'conditional' => array(
-					'textColor' => '#darkmode_body_color#',
+					'textColor'  => '#darkmode_body_color#',
 					'conditions' => array(
 						array(
 							'preferredColorScheme' => 'dark',
@@ -94,9 +94,9 @@ class Intro extends Component {
 				'#body_size#'        => intval( $theme->get_value( 'body_size' ) ),
 				'#body_line_height#' => intval( $theme->get_value( 'body_line_height' ) ),
 				'#body_color#'       => $theme->get_value( 'body_color' ),
-				'conditional' => array(
-					'#body_color#'       => $theme->get_value( 'darkmode_body_color' ),
-					'conditions' => array(
+				'conditional'        => array(
+					'#body_color#' => $theme->get_value( 'darkmode_body_color' ),
+					'conditions'   => array(
 						array(
 							'preferredColorScheme' => 'dark',
 						),

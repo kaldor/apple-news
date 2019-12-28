@@ -41,7 +41,7 @@ class Byline extends Component {
 				'tracking'      => '#byline_tracking#',
 				'textColor'     => '#byline_color#',
 				'conditional'   => array(
-					'textColor' => '#darkmode_byline_color#',
+					'textColor'  => '#darkmode_byline_color#',
 					'conditions' => array(
 						array(
 							'preferredColorScheme' => 'dark',
@@ -102,13 +102,13 @@ class Byline extends Component {
 			'default-byline',
 			'default-byline',
 			array(
-				'#text_alignment#'     => $this->find_text_alignment(),
-				'#byline_font#'        => $theme->get_value( 'byline_font' ),
-				'#byline_size#'        => intval( $theme->get_value( 'byline_size' ) ),
-				'#byline_line_height#' => intval( $theme->get_value( 'byline_line_height' ) ),
-				'#byline_tracking#'    => intval( $theme->get_value( 'byline_tracking' ) ) / 100,
-				'#byline_color#'       => $theme->get_value( 'byline_color' ),
-				'#darkmode_byline_color#'       => $theme->get_value( 'darkmode_byline_color' ),
+				'#text_alignment#'        => $this->find_text_alignment(),
+				'#byline_font#'           => $theme->get_value( 'byline_font' ),
+				'#byline_size#'           => intval( $theme->get_value( 'byline_size' ) ),
+				'#byline_line_height#'    => intval( $theme->get_value( 'byline_line_height' ) ),
+				'#byline_tracking#'       => intval( $theme->get_value( 'byline_tracking' ) ) / 100,
+				'#byline_color#'          => $theme->get_value( 'byline_color' ),
+				'#darkmode_byline_color#' => $theme->get_value( 'darkmode_byline_color' ),
 			),
 			'textStyle'
 		);

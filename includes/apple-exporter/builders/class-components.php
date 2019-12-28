@@ -650,7 +650,7 @@ class Components extends Builder {
 			$regrouped_components['style']['conditional'] = array(
 				array(
 					'backgroundColor' => $theme->get_value( 'darkmode_body_background_color' ),
-					'conditions' => array(
+					'conditions'      => array(
 						array(
 							'preferredColorScheme' => 'dark',
 						),

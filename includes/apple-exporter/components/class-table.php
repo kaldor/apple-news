@@ -73,14 +73,14 @@ class Table extends Component {
 			'default-table',
 			__( 'Table Style', 'apple-news' ),
 			array(
-				'border'     => array(
+				'border'      => array(
 					'all' => array(
 						'color' => '#table_border_color#',
 						'style' => '#table_border_style#',
 						'width' => '#table_border_width#',
 					),
 				),
-				'tableStyle' => array(
+				'tableStyle'  => array(
 					'cells'       => array(
 						'backgroundColor'     => '#table_body_background_color#',
 						'horizontalAlignment' => '#table_body_horizontal_alignment#',
@@ -129,7 +129,7 @@ class Table extends Component {
 						),
 					),
 				),
-				'conditional'   => array(
+				'conditional' => array(
 					'border'     => array(
 						'all' => array(
 							'color' => '#darkmode_table_border_color#',
@@ -137,9 +137,9 @@ class Table extends Component {
 					),
 					'tableStyle' => array(
 						'cells'       => array(
-							'backgroundColor'     => '#darkmode_table_body_background_color#',
-							'textStyle'           => array(
-								'textColor'  => '#darkmode_table_body_color#',
+							'backgroundColor' => '#darkmode_table_body_background_color#',
+							'textStyle'       => array(
+								'textColor' => '#darkmode_table_body_color#',
 							),
 						),
 						'columns'     => array(
@@ -148,9 +148,9 @@ class Table extends Component {
 							),
 						),
 						'headerCells' => array(
-							'backgroundColor'     => '#darkmode_table_header_background_color#',
-							'textStyle'           => array(
-								'textColor'  => '#darkmode_table_header_color#',
+							'backgroundColor' => '#darkmode_table_header_background_color#',
+							'textStyle'       => array(
+								'textColor' => '#darkmode_table_header_color#',
 							),
 						),
 						'headerRows'  => array(

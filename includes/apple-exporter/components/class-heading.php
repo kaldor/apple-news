@@ -94,7 +94,7 @@ class Heading extends Component {
 					'textAlignment' => '#text_alignment#',
 					'tracking'      => '#header' . $level . '_tracking#',
 					'conditional'   => array(
-						'textColor' => '#darkmode_header' . $level . '_color#',
+						'textColor'  => '#darkmode_header' . $level . '_color#',
 						'conditions' => array(
 							array(
 								'preferredColorScheme' => 'dark',
@@ -238,9 +238,9 @@ class Heading extends Component {
 				'#header' . $level . '_color#'       => $theme->get_value( 'header' . $level . '_color' ),
 				'#text_alignment#'                   => $this->find_text_alignment(),
 				'#header' . $level . '_tracking#'    => intval( $theme->get_value( 'header' . $level . '_tracking' ) ) / 100,
-				'conditional' => array(
-					'#header' . $level . '_color#'       => $theme->get_value( 'darkmode_header' . $level . '_color' ),
-					'conditions' => array(
+				'conditional'                        => array(
+					'#header' . $level . '_color#' => $theme->get_value( 'darkmode_header' . $level . '_color' ),
+					'conditions'                   => array(
 						array(
 							'preferredColorScheme' => 'dark',
 						),

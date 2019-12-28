@@ -50,9 +50,9 @@ class Quote extends Component {
 				),
 				'style'      => array(
 					'backgroundColor' => '#blockquote_background_color#',
-					'conditional' => array(
+					'conditional'     => array(
 						'backgroundColor' => '#darkmode_blockquote_background_color#',
-						'conditions' => array(
+						'conditions'      => array(
 							array(
 								'preferredColorScheme' => 'dark',
 							),
@@ -96,7 +96,7 @@ class Quote extends Component {
 						'right'  => false,
 						'top'    => false,
 					),
-					'conditional' => array(
+					'conditional'     => array(
 						'backgroundColor' => '#darkmode_blockquote_background_color#',
 						'border'          => array(
 							'all'    => array(
@@ -108,7 +108,7 @@ class Quote extends Component {
 							'right'  => false,
 							'top'    => false,
 						),
-						'conditions' => array(
+						'conditions'      => array(
 							array(
 								'preferredColorScheme' => 'dark',
 							),
@@ -151,7 +151,7 @@ class Quote extends Component {
 				'textAlignment' => '#text_alignment#',
 				'tracking'      => '#blockquote_tracking#',
 				'conditoinal'   => array(
-					'textColor' => '#darkmode_blockquote_color#',
+					'textColor'  => '#darkmode_blockquote_color#',
 					'conditions' => array(
 						array(
 							'preferredColorScheme' => 'dark',
@@ -209,7 +209,7 @@ class Quote extends Component {
 					),
 				),
 				'style'      => array(
-					'border' => array(
+					'border'      => array(
 						'all'   => array(
 							'width' => '#pullquote_border_width#',
 							'style' => '#pullquote_border_style#',
@@ -219,7 +219,7 @@ class Quote extends Component {
 						'right' => false,
 					),
 					'conditional' => array(
-						'border' => array(
+						'border'     => array(
 							'all'   => array(
 								'width' => '#pullquote_border_width#',
 								'style' => '#pullquote_border_style#',
@@ -269,7 +269,7 @@ class Quote extends Component {
 				'textAlignment'      => '#text_alignment#',
 				'tracking'           => '#pullquote_tracking#',
 				'conditional'        => array(
-					'textColor' => '#darkmode_pullquote_color#',
+					'textColor'  => '#darkmode_pullquote_color#',
 					'conditions' => array(
 						array(
 							'preferredColorScheme' => 'dark',
@@ -385,14 +385,14 @@ class Quote extends Component {
 
 		// Set JSON for this element.
 		$values = array(
-			'#body_offset#'                 => $theme->get_body_offset(),
-			'#body_column_span#'            => $theme->get_body_column_span(),
-			'#layout_gutter#'               => $theme->get_value( 'layout_gutter' ),
-			'#blockquote_background_color#' => $theme->get_value( 'blockquote_background_color' ),
+			'#body_offset#'                          => $theme->get_body_offset(),
+			'#body_column_span#'                     => $theme->get_body_column_span(),
+			'#layout_gutter#'                        => $theme->get_value( 'layout_gutter' ),
+			'#blockquote_background_color#'          => $theme->get_value( 'blockquote_background_color' ),
 			'#darkmode_blockquote_background_color#' => $theme->get_value( 'darkmode_blockquote_background_color' ),
-			'#text#'                        => $this->parser->parse( $text ),
-			'#format#'                      => $this->parser->format,
-			'#default_blockquote#'          => 'default-blockquote-' . $this->text_alignment,
+			'#text#'                                 => $this->parser->parse( $text ),
+			'#format#'                               => $this->parser->format,
+			'#default_blockquote#'                   => 'default-blockquote-' . $this->text_alignment,
 		);
 
 		// Set component attributes.
@@ -472,9 +472,9 @@ class Quote extends Component {
 		return array_merge(
 			$values,
 			array(
-				'#blockquote_border_width#' => $theme->get_value( 'blockquote_border_width' ),
-				'#blockquote_border_style#' => $theme->get_value( 'blockquote_border_style' ),
-				'#blockquote_border_color#' => $theme->get_value( 'blockquote_border_color' ),
+				'#blockquote_border_width#'          => $theme->get_value( 'blockquote_border_width' ),
+				'#blockquote_border_style#'          => $theme->get_value( 'blockquote_border_style' ),
+				'#blockquote_border_color#'          => $theme->get_value( 'blockquote_border_color' ),
 				'#darkmode_blockquote_border_color#' => $theme->get_value( 'darkmode_blockquote_border_color' ),
 			)
 		);
@@ -507,13 +507,13 @@ class Quote extends Component {
 			'default-blockquote-' . $text_alignment,
 			'default-blockquote',
 			array(
-				'#blockquote_font#'        => $theme->get_value( 'blockquote_font' ),
-				'#blockquote_size#'        => intval( $theme->get_value( 'blockquote_size' ) ),
-				'#blockquote_color#'       => $theme->get_value( 'blockquote_color' ),
-				'#darkmode_blockquote_color#'       => $theme->get_value( 'darkmode_blockquote_color' ),
-				'#blockquote_line_height#' => intval( $theme->get_value( 'blockquote_line_height' ) ),
-				'#text_alignment#'         => $this->find_text_alignment( $this->text ),
-				'#blockquote_tracking#'    => intval( $theme->get_value( 'blockquote_tracking' ) ) / 100,
+				'#blockquote_font#'           => $theme->get_value( 'blockquote_font' ),
+				'#blockquote_size#'           => intval( $theme->get_value( 'blockquote_size' ) ),
+				'#blockquote_color#'          => $theme->get_value( 'blockquote_color' ),
+				'#darkmode_blockquote_color#' => $theme->get_value( 'darkmode_blockquote_color' ),
+				'#blockquote_line_height#'    => intval( $theme->get_value( 'blockquote_line_height' ) ),
+				'#text_alignment#'            => $this->find_text_alignment( $this->text ),
+				'#blockquote_tracking#'       => intval( $theme->get_value( 'blockquote_tracking' ) ) / 100,
 			)
 		);
 	}
@@ -543,9 +543,9 @@ class Quote extends Component {
 		return array_merge(
 			$values,
 			array(
-				'#pullquote_border_width#' => $theme->get_value( 'pullquote_border_width' ),
-				'#pullquote_border_style#' => $theme->get_value( 'pullquote_border_style' ),
-				'#pullquote_border_color#' => $theme->get_value( 'pullquote_border_color' ),
+				'#pullquote_border_width#'          => $theme->get_value( 'pullquote_border_width' ),
+				'#pullquote_border_style#'          => $theme->get_value( 'pullquote_border_style' ),
+				'#pullquote_border_color#'          => $theme->get_value( 'pullquote_border_color' ),
 				'#darkmode_pullquote_border_color#' => $theme->get_value( 'darkmode_pullquote_border_color' ),
 			)
 		);
@@ -581,7 +581,7 @@ class Quote extends Component {
 				'#pullquote_size#'                => intval( $theme->get_value( 'pullquote_size' ) ),
 				'#pullquote_hanging_punctuation#' => ( 'yes' === $theme->get_value( 'pullquote_hanging_punctuation' ) ),
 				'#pullquote_color#'               => $theme->get_value( 'pullquote_color' ),
-				'#darkmode_pullquote_color#'               => $theme->get_value( 'darkmode_pullquote_color' ),
+				'#darkmode_pullquote_color#'      => $theme->get_value( 'darkmode_pullquote_color' ),
 				'#pullquote_transform#'           => $theme->get_value( 'pullquote_transform' ),
 				'#pullquote_line_height#'         => intval( $theme->get_value( 'pullquote_line_height' ) ),
 				'#text_alignment#'                => $this->find_text_alignment(),

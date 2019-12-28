@@ -87,7 +87,7 @@ class Image extends Component {
 							'lineHeight'    => '#caption_line_height#',
 							'textColor'     => '#caption_color#',
 							'conditional'   => array(
-								'textColor' => '#darkmode_caption_color#',
+								'textColor'  => '#darkmode_caption_color#',
 								'conditions' => array(
 									array(
 										'preferredColorScheme' => 'dark',
@@ -324,9 +324,9 @@ class Image extends Component {
 				'#caption_line_height#' => intval( $theme->get_value( 'caption_line_height' ) ),
 				'#caption_color#'       => $theme->get_value( 'caption_color' ),
 				'#full_bleed_images#'   => ( 'yes' === $this->get_setting( 'full_bleed_images' ) ),
-				'conditional' => array(
-					'#caption_color#'       => $theme->get_value( 'darkmode_caption_color' ),
-					'conditions' => array(
+				'conditional'           => array(
+					'#caption_color#' => $theme->get_value( 'darkmode_caption_color' ),
+					'conditions'      => array(
 						array(
 							'preferredColorScheme' => 'dark',
 						),

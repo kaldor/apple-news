@@ -129,9 +129,9 @@ class Body extends Component {
 						'numberOfRaisedLines' => '#dropcap_number_of_raised_lines#',
 						'backgroundColor'     => '#dropcap_background_color#',
 						'conditional'         => array(
-							'textColor' => '#darkmode_dropcap_color#',
-							'backgroundColor'     => '#darkmode_dropcap_background_color#',
-							'conditions' => array(
+							'textColor'       => '#darkmode_dropcap_color#',
+							'backgroundColor' => '#darkmode_dropcap_background_color#',
+							'conditions'      => array(
 								array(
 									'preferredColorScheme' => 'dark',
 								),
@@ -321,9 +321,9 @@ class Body extends Component {
 			),
 			'paragraphSpacingBefore' => 18,
 			'paragraphSpacingAfter'  => 18,
-			'conditional' => array(
-				'textColor' => '#darkmode_body_color#',
-				'linkStyle'              => array(
+			'conditional'            => array(
+				'textColor'  => '#darkmode_body_color#',
+				'linkStyle'  => array(
 					'textColor' => '#darkmode_body_link_color#',
 				),
 				'conditions' => array(
@@ -347,14 +347,14 @@ class Body extends Component {
 		$theme = \Apple_Exporter\Theme::get_used();
 
 		return array(
-			'#body_font#'        => $theme->get_value( 'body_font' ),
-			'#body_size#'        => intval( $theme->get_value( 'body_size' ) ),
-			'#body_tracking#'    => intval( $theme->get_value( 'body_tracking' ) ) / 100,
-			'#body_line_height#' => intval( $theme->get_value( 'body_line_height' ) ),
-			'#body_color#'       => $theme->get_value( 'body_color' ),
-			'#darkmode_body_color#'       => $theme->get_value( 'darkmode_body_color' ),
-			'#body_link_color#'  => $theme->get_value( 'body_link_color' ),
-			'#darkmode_body_link_color#'  => $theme->get_value( 'darkmode_body_link_color' ),
+			'#body_font#'                => $theme->get_value( 'body_font' ),
+			'#body_size#'                => intval( $theme->get_value( 'body_size' ) ),
+			'#body_tracking#'            => intval( $theme->get_value( 'body_tracking' ) ) / 100,
+			'#body_line_height#'         => intval( $theme->get_value( 'body_line_height' ) ),
+			'#body_color#'               => $theme->get_value( 'body_color' ),
+			'#darkmode_body_color#'      => $theme->get_value( 'darkmode_body_color' ),
+			'#body_link_color#'          => $theme->get_value( 'body_link_color' ),
+			'#darkmode_body_link_color#' => $theme->get_value( 'darkmode_body_link_color' ),
 		);
 	}
 
@@ -399,8 +399,8 @@ class Body extends Component {
 			'#dropcap_padding#'                => absint( $theme->get_value( 'dropcap_padding' ) ),
 			'#dropcap_color#'                  => $theme->get_value( 'dropcap_color' ),
 			'conditional'                      => array(
-				'#dropcap_color#'            => $theme->get_value( 'darkmode_dropcap_color' ),
-				'conditions' => array(
+				'#dropcap_color#' => $theme->get_value( 'darkmode_dropcap_color' ),
+				'conditions'      => array(
 					array(
 						'preferredColorScheme' => 'dark',
 					),

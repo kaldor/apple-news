@@ -97,14 +97,14 @@ class Text_Styles extends Builder {
 		$this->register_style(
 			'default-tag-code',
 			array(
-				'fontName'   => $theme->get_value( 'monospaced_font' ),
-				'fontSize'   => intval( $theme->get_value( 'monospaced_size' ) ),
-				'tracking'   => intval( $theme->get_value( 'monospaced_tracking' ) ) / 100,
-				'lineHeight' => intval( $theme->get_value( 'monospaced_line_height' ) ),
-				'textColor'  => $theme->get_value( 'monospaced_color' ),
+				'fontName'    => $theme->get_value( 'monospaced_font' ),
+				'fontSize'    => intval( $theme->get_value( 'monospaced_size' ) ),
+				'tracking'    => intval( $theme->get_value( 'monospaced_tracking' ) ) / 100,
+				'lineHeight'  => intval( $theme->get_value( 'monospaced_line_height' ) ),
+				'textColor'   => $theme->get_value( 'monospaced_color' ),
 				'conditional' => ! empty( $theme->get_value( 'darkmode_monospaced_color' ) ) ? array(
 					array(
-						'textColor' => $theme->get_value( 'darkmode_monospaced_color' ),
+						'textColor'  => $theme->get_value( 'darkmode_monospaced_color' ),
 						'conditions' => array(
 							array(
 								'preferredColorScheme' => 'dark',
@@ -127,9 +127,9 @@ class Text_Styles extends Builder {
 				'textColor'              => $theme->get_value( 'monospaced_color' ),
 				'paragraphSpacingBefore' => 18,
 				'paragraphSpacingAfter'  => 18,
-				'conditional' => ! empty( $theme->get_value( 'darkmode_monospaced_color' ) ) ? array(
+				'conditional'            => ! empty( $theme->get_value( 'darkmode_monospaced_color' ) ) ? array(
 					array(
-						'textColor' => $theme->get_value( 'darkmode_monospaced_color' ),
+						'textColor'  => $theme->get_value( 'darkmode_monospaced_color' ),
 						'conditions' => array(
 							array(
 								'preferredColorScheme' => 'dark',
@@ -144,14 +144,14 @@ class Text_Styles extends Builder {
 		$this->register_style(
 			'default-tag-samp',
 			array(
-				'fontName'   => $theme->get_value( 'monospaced_font' ),
-				'fontSize'   => intval( $theme->get_value( 'monospaced_size' ) ),
-				'tracking'   => intval( $theme->get_value( 'monospaced_tracking' ) ) / 100,
-				'lineHeight' => intval( $theme->get_value( 'monospaced_line_height' ) ),
-				'textColor'  => $theme->get_value( 'monospaced_color' ),
+				'fontName'    => $theme->get_value( 'monospaced_font' ),
+				'fontSize'    => intval( $theme->get_value( 'monospaced_size' ) ),
+				'tracking'    => intval( $theme->get_value( 'monospaced_tracking' ) ) / 100,
+				'lineHeight'  => intval( $theme->get_value( 'monospaced_line_height' ) ),
+				'textColor'   => $theme->get_value( 'monospaced_color' ),
 				'conditional' => ! empty( $theme->get_value( 'darkmode_monospaced_color' ) ) ? array(
 					array(
-						'textColor' => $theme->get_value( 'darkmode_monospaced_color' ),
+						'textColor'  => $theme->get_value( 'darkmode_monospaced_color' ),
 						'conditions' => array(
 							array(
 								'preferredColorScheme' => 'dark',
