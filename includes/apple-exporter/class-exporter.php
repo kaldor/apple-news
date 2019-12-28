@@ -288,9 +288,22 @@ class Exporter {
 		// Get information about the currently used theme.
 		$theme = \Apple_Exporter\Theme::get_used();
 
-		return array(
+		$output = array(
 			'backgroundColor' => $theme->get_value( 'body_background_color' ),
 		);
+		if ( ! empty( $theme->get_value( 'darkmode_body_background_color' ) ) ) {
+			$output['conditional'] = array(
+				array(
+					'backgroundColor' => $theme->get_value( 'darkmode_body_background_color' ),
+					'conditions' => array(
+						array(
+							'preferredColorScheme' => 'dark',
+						),
+					),
+				),
+			);
+		}
+		return $output;
 	}
 
 	/**

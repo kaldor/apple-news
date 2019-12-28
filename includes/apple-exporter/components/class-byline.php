@@ -108,6 +108,7 @@ class Byline extends Component {
 				'#byline_line_height#' => intval( $theme->get_value( 'byline_line_height' ) ),
 				'#byline_tracking#'    => intval( $theme->get_value( 'byline_tracking' ) ) / 100,
 				'#byline_color#'       => $theme->get_value( 'byline_color' ),
+				'#darkmode_byline_color#'       => $theme->get_value( 'darkmode_byline_color' ),
 			),
 			'textStyle'
 		);

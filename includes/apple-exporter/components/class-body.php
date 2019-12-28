@@ -128,7 +128,7 @@ class Body extends Component {
 						'textColor'           => '#dropcap_color#',
 						'numberOfRaisedLines' => '#dropcap_number_of_raised_lines#',
 						'backgroundColor'     => '#dropcap_background_color#',
-						array(
+						'conditional'         => array(
 							'textColor' => '#darkmode_dropcap_color#',
 							'backgroundColor'     => '#darkmode_dropcap_background_color#',
 							'conditions' => array(
@@ -321,7 +321,7 @@ class Body extends Component {
 			),
 			'paragraphSpacingBefore' => 18,
 			'paragraphSpacingAfter'  => 18,
-			array(
+			'conditional' => array(
 				'textColor' => '#darkmode_body_color#',
 				'linkStyle'              => array(
 					'textColor' => '#darkmode_body_link_color#',
@@ -352,7 +352,9 @@ class Body extends Component {
 			'#body_tracking#'    => intval( $theme->get_value( 'body_tracking' ) ) / 100,
 			'#body_line_height#' => intval( $theme->get_value( 'body_line_height' ) ),
 			'#body_color#'       => $theme->get_value( 'body_color' ),
+			'#darkmode_body_color#'       => $theme->get_value( 'darkmode_body_color' ),
 			'#body_link_color#'  => $theme->get_value( 'body_link_color' ),
+			'#darkmode_body_link_color#'  => $theme->get_value( 'darkmode_body_link_color' ),
 		);
 	}
 
@@ -396,12 +398,26 @@ class Body extends Component {
 			'#dropcap_number_of_raised_lines#' => absint( $theme->get_value( 'dropcap_number_of_raised_lines' ) ),
 			'#dropcap_padding#'                => absint( $theme->get_value( 'dropcap_padding' ) ),
 			'#dropcap_color#'                  => $theme->get_value( 'dropcap_color' ),
+			'conditional'                      => array(
+				'#dropcap_color#'            => $theme->get_value( 'darkmode_dropcap_color' ),
+				'conditions' => array(
+					array(
+						'preferredColorScheme' => 'dark',
+					),
+				),
+			),
 		);
 
 		// Add the background color, if defined.
 		$background_color = $theme->get_value( 'dropcap_background_color' );
 		if ( ! empty( $background_color ) ) {
 			$dropcap_style['#dropcap_background_color#'] = $background_color;
+		}
+
+		// Add the dark mode background color, if defined.
+		$darkmode_background_color = $theme->get_value( 'darkmode_dropcap_background_color' );
+		if ( ! empty( $darkmode_background_color ) ) {
+			$dropcap_style['conditional']['#dropcap_background_color#'] = $darkmode_background_color;
 		}
 
 		$this->register_style(

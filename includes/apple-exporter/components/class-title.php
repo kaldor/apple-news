@@ -42,6 +42,14 @@ class Title extends Component {
 				'tracking'      => '#header1_tracking#',
 				'textColor'     => '#header1_color#',
 				'textAlignment' => '#text_alignment#',
+				'conditional'   => array(
+					'textColor'     => '#darkmode_header1_color#',
+					'conditions' => array(
+						array(
+							'preferredColorScheme' => 'dark',
+						),
+					),
+				),
 			)
 		);
 
@@ -101,6 +109,7 @@ class Title extends Component {
 				'#header1_line_height#' => intval( $theme->get_value( 'header1_line_height' ) ),
 				'#header1_tracking#'    => intval( $theme->get_value( 'header1_tracking' ) ) / 100,
 				'#header1_color#'       => $theme->get_value( 'header1_color' ),
+				'#darkmode_header1_color#'       => $theme->get_value( 'darkmode_header1_color' ),
 				'#text_alignment#'      => $this->find_text_alignment(),
 			),
 			'textStyle'

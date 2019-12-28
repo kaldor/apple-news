@@ -324,6 +324,14 @@ class Image extends Component {
 				'#caption_line_height#' => intval( $theme->get_value( 'caption_line_height' ) ),
 				'#caption_color#'       => $theme->get_value( 'caption_color' ),
 				'#full_bleed_images#'   => ( 'yes' === $this->get_setting( 'full_bleed_images' ) ),
+				'conditional' => array(
+					'#caption_color#'       => $theme->get_value( 'darkmode_caption_color' ),
+					'conditions' => array(
+						array(
+							'preferredColorScheme' => 'dark',
+						),
+					),
+				),
 			)
 		);
 

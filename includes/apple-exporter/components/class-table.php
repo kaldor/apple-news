@@ -78,14 +78,6 @@ class Table extends Component {
 						'color' => '#table_border_color#',
 						'style' => '#table_border_style#',
 						'width' => '#table_border_width#',
-						'conditional'   => array(
-							'color' => '#darkmode_table_border_color#',
-							'conditions' => array(
-								array(
-									'preferredColorScheme' => 'dark',
-								),
-							),
-						),
 					),
 				),
 				'tableStyle' => array(
@@ -99,24 +91,8 @@ class Table extends Component {
 							'lineHeight' => '#table_body_line_height#',
 							'textColor'  => '#table_body_color#',
 							'tracking'   => '#table_body_tracking#',
-							'conditional'   => array(
-								'textColor' => '#darkmode_table_body_color#',
-								'conditions' => array(
-									array(
-										'preferredColorScheme' => 'dark',
-									),
-								),
-							),
 						),
 						'verticalAlignment'   => '#table_body_vertical_alignment#',
-						'conditional'   => array(
-							'backgroundColor' => '#darkmode_table_body_background_color#',
-							'conditions' => array(
-								array(
-									'preferredColorScheme' => 'dark',
-								),
-							),
-						),
 					),
 					'columns'     => array(
 						'divider' => array(
@@ -150,6 +126,47 @@ class Table extends Component {
 							'color' => '#table_border_color#',
 							'style' => '#table_border_style#',
 							'width' => '#table_border_width#',
+						),
+					),
+				),
+				'conditional'   => array(
+					'border'     => array(
+						'all' => array(
+							'color' => '#darkmode_table_border_color#',
+						),
+					),
+					'tableStyle' => array(
+						'cells'       => array(
+							'backgroundColor'     => '#darkmode_table_body_background_color#',
+							'textStyle'           => array(
+								'textColor'  => '#darkmode_table_body_color#',
+							),
+						),
+						'columns'     => array(
+							'divider' => array(
+								'color' => '#darkmode_table_border_color#',
+							),
+						),
+						'headerCells' => array(
+							'backgroundColor'     => '#darkmode_table_header_background_color#',
+							'textStyle'           => array(
+								'textColor'  => '#darkmode_table_header_color#',
+							),
+						),
+						'headerRows'  => array(
+							'divider' => array(
+								'color' => '#darkmode_table_border_color#',
+							),
+						),
+						'rows'        => array(
+							'divider' => array(
+								'color' => '#darkmode_table_border_color#',
+							),
+						),
+					),
+					'conditions' => array(
+						array(
+							'preferredColorScheme' => 'dark',
 						),
 					),
 				),

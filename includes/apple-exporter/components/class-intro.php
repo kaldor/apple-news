@@ -94,6 +94,14 @@ class Intro extends Component {
 				'#body_size#'        => intval( $theme->get_value( 'body_size' ) ),
 				'#body_line_height#' => intval( $theme->get_value( 'body_line_height' ) ),
 				'#body_color#'       => $theme->get_value( 'body_color' ),
+				'conditional' => array(
+					'#body_color#'       => $theme->get_value( 'darkmode_body_color' ),
+					'conditions' => array(
+						array(
+							'preferredColorScheme' => 'dark',
+						),
+					),
+				),
 			),
 			'textStyle'
 		);

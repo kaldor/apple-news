@@ -101,7 +101,6 @@ class Heading extends Component {
 							),
 						),
 					),
-
 				)
 			);
 		}
@@ -239,6 +238,14 @@ class Heading extends Component {
 				'#header' . $level . '_color#'       => $theme->get_value( 'header' . $level . '_color' ),
 				'#text_alignment#'                   => $this->find_text_alignment(),
 				'#header' . $level . '_tracking#'    => intval( $theme->get_value( 'header' . $level . '_tracking' ) ) / 100,
+				'conditional' => array(
+					'#header' . $level . '_color#'       => $theme->get_value( 'darkmode_header' . $level . '_color' ),
+					'conditions' => array(
+						array(
+							'preferredColorScheme' => 'dark',
+						),
+					),
+				),
 			),
 			'textStyle'
 		);
