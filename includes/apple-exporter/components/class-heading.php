@@ -41,6 +41,11 @@ class Heading extends Component {
 			return null;
 		}
 
+		// We will handle NR Headings in a custom component.
+		if ( self::node_has_class( $node, 'nr-heading' ) ) {
+			return null;
+		}
+
 		$html = $node->ownerDocument->saveXML( $node ); // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
 		if ( preg_match( '#<img.*?>#si', $html ) ) {
 			return self::split_image( $html );
