@@ -212,12 +212,40 @@ class Body extends Component {
 	}
 
 	/**
+	 * Format NR heading span tags as paragraph tags.
+	 *
+	 * @param string $html The HTML to format
+	 * @return string $html The formatted HTML.
+	 */
+	private function format_nr_heading_tags( $html ) {
+		$nr_heading_open = '<p><span class="nr-heading">';
+
+		if (strpos( $html, $nr_heading_open ) === false) {
+			return $html;
+		}
+
+		$new_html = $html;
+		$nr_open_replace = '<p class="nr-heading>';
+		$nr_close_replace = '</p><p>';
+
+		$new_html = str_replace( $nr_heading_open, $nr_open_replace, $new_html);
+		$new_html = preg_replace('/<\/span>/', '</p><p>', $new_html, 1);
+		$html = $new_html;
+
+		return $html;
+
+	}
+
+	/**
 	 * Build the component.
 	 *
 	 * @param string $html The HTML to parse into text for processing.
 	 * @access protected
 	 */
 	protected function build( $html ) {
+
+		// If we have NR Headings, format them as separate tags.
+		$html = $this->format_nr_heading_tags( $html );
 
 		// If there is no text for this element, bail.
 		$html  = $this->parser->parse( $html );
