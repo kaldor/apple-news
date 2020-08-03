@@ -756,6 +756,11 @@ class Theme {
 				'options' => array( 'yes', 'no' ),
 				'type'    => 'select',
 			),
+			'eyebrow_color'                     => array(
+				'default' => '#E92131',
+				'label'   => __( 'Eyebrow font color', 'apple-news' ),
+				'type'    => 'color',
+			),
 			'gallery_type'                      => array(
 				'default' => 'gallery',
 				'label'   => __( 'Gallery type', 'apple-news' ),
@@ -2178,7 +2183,12 @@ class Theme {
 					'recirc_link_color',
 				),
 			),
-
+			'eyebrow_color'         => array(
+				'label'    => __( 'Eyebrow Color', 'apple-news' ),
+				'settings' => array(
+					'eyebrow_color',
+				),
+			),
 			'advertisement'   => array(
 				'label'    => __( 'Advertisement', 'apple-news' ),
 				'settings' => array(

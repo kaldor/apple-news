@@ -240,13 +240,15 @@ class Components extends Builder {
 			'recirc',
 			$this->content_id()
 		);
-		$component->set_anchor_position( Component::ANCHOR_AUTO );
+		if ( ! empty( $component ) ) {
+			$component->set_anchor_position( Component::ANCHOR_AUTO );
 
-		// Anchor the newly created pullquote component to the target component.
-		$this->anchor_together( $component, $components[ $position ] );
+			// Anchor the newly created pullquote component to the target component.
+			$this->anchor_together( $component, $components[ $position ] );
 
-		// Add component in position.
-		array_splice( $components, $position, 0, array( $component ) );
+			// Add component in position.
+			array_splice( $components, $position, 0, array( $component ) );
+		}
 	}
 
 	/**
