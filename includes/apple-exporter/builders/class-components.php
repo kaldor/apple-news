@@ -240,7 +240,8 @@ class Components extends Builder {
 			'recirc',
 			$this->content_id()
 		);
-		if ( ! empty( $component ) ) {
+
+		if ( ! empty( $component->get_json( 'components' ) ) ) {
 			$component->set_anchor_position( Component::ANCHOR_AUTO );
 
 			// Anchor the newly created pullquote component to the target component.
