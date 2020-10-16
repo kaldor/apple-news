@@ -76,14 +76,7 @@ class HTML {
 		// Replace non-breaking spaces with regular spaces.
 		$html = str_ireplace( '&nbsp;', ' ', $html );
 		$html = str_replace( '&#160;', ' ', $html );
-		$html = str_replace( chr( 160 ), ' ', $html );
-
-		/**
-		 * Replace the "null" character with a blank string.
-		 *
-		 * @link https://stackoverflow.com/questions/42424555/trim-whitespace-ascii-character-194-from-string
-		 */
-		$html = preg_replace( '#(^\s+|\s+$)#', '', $html );
+		$html = str_replace( chr( 194 ) . chr( 160 ), ' ', $html );
 
 		// Remove any empty tags.
 		$html = preg_replace( '/<([a-z0-9]+)[^>]*>\s*<\/\1>/', '', $html );
