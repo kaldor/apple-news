@@ -11,7 +11,7 @@
  */
 
 /*
- * Plugin Name: Publish to Apple News
+ * Plugin Name: Publish to Apple News (Pugpig fork)
  * Plugin URI:  http://github.com/alleyinteractive/apple-news
  * Description: Export and sync posts to Apple format.
  * Version:     2.0.7
