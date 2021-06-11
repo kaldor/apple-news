@@ -171,9 +171,26 @@ class Admin_Apple_Settings_Section extends Apple_News {
 		$base_settings             = new \Apple_Exporter\Settings();
 		self::$base_settings       = $base_settings->all();
 		self::$loaded_settings     = get_option( self::$section_option_name );
-		$this->settings            = apply_filters( 'apple_news_section_settings', $this->settings, $page );
-		$this->groups              = apply_filters( 'apple_news_section_groups', $this->groups, $page );
-		$this->hidden              = $hidden;
+
+		/**
+		 * Modifies the setting values for the settings page.
+		 *
+		 * @param array  $settings An array of settings for this section.
+		 * @param string $page     The name of the settings page.
+		 */
+		$this->settings = apply_filters( 'apple_news_section_settings', $this->settings, $page );
+
+		/**
+		 * Modifies the groups for the settings page.
+		 *
+		 * This could be used to add or remove a group or reorder them.
+		 *
+		 * @param array  $groups An array of groups for this section.
+		 * @param string $page   The name of the settings page.
+		 */
+		$this->groups = apply_filters( 'apple_news_section_groups', $this->groups, $page );
+
+		$this->hidden = $hidden;
 
 		// Save settings if necessary.
 		$this->save_settings();
@@ -234,7 +251,7 @@ class Admin_Apple_Settings_Section extends Apple_News {
 	 * @return mixed The result of the callback, if provided.
 	 */
 	public function render_field( $args ) {
-		list( $name, $default_value, $callback ) = $args;
+		list( $name, , $callback ) = $args;
 
 		$type = $this->get_type_for( $name );
 
@@ -261,6 +278,9 @@ class Admin_Apple_Settings_Section extends Apple_News {
 			if ( $this->is_multiple( $name ) ) {
 				$multiple_name = '[]';
 				$multiple_attr = 'multiple="multiple"';
+				$size          = min( $size, count( $type ) );
+			} else {
+				$size = 1;
 			}
 
 			// Check if we're using names as values.
@@ -299,6 +319,12 @@ class Admin_Apple_Settings_Section extends Apple_News {
 		// Add a description, if set.
 		$description = $this->get_description_for( $name );
 		if ( ! empty( $description ) && 'hidden' !== $type ) {
+			/**
+			 * Modifies the HTML output for the description of any field.
+			 *
+			 * @param string $html The HTML for the field description.
+			 * @param string $name The name of the field.
+			 */
 			$field .= apply_filters( 'apple_news_field_description_output_html', '<br/><i>' . $description . '</i>', $name );
 		}
 
